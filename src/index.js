@@ -16,6 +16,9 @@ mongoose.connect(process.env.MONGODB_URI, {
   useCreateIndex: true,
 });
 
+const usersRoute = require("../routes/user");
+app.use(usersRoute);
+
 app.get("/", (req, res) => {
   res.json({ message: "Welcome on StarWars API" });
 });
