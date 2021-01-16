@@ -16,6 +16,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   useCreateIndex: true,
 });
 
+const databankRoute = require("../routes/databank");
+app.use(databankRoute);
 const usersRoute = require("../routes/user");
 app.use(usersRoute);
 
